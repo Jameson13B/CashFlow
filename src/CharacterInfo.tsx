@@ -16,7 +16,7 @@ export const CharacterInfo = () => {
       state.per_child_expense * state.children
   )
 
-  const onChange = (val: number | string, name: string) => {
+  const onChange = (val: number | string | null, name: string) => {
     characterInfoState.setValue({
       ...characterInfoState,
       [name]: val,
@@ -26,7 +26,7 @@ export const CharacterInfo = () => {
   return (
     <div className="container">
       <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-        <Input<string>
+        <Input
           addonBefore="Name"
           name="name"
           placeholder="Enter your name"
@@ -35,7 +35,7 @@ export const CharacterInfo = () => {
           }
           value={characterInfoState.name}
         />
-        <Input<string>
+        <Input
           addonBefore="Profession"
           name="profession"
           placeholder="Enter your profession"
@@ -46,11 +46,11 @@ export const CharacterInfo = () => {
         />
       </div>
       <Divider />
-      <InputNumber<number>
+      <InputNumber
         addonBefore="Salary"
         prefix="$"
         name="salary"
-        onChange={(e: string | number) => onChange(e, "salary")}
+        onChange={(value: number | null) => onChange(value, "salary")}
         value={characterInfoState.salary}
       />
       <Divider />
@@ -64,68 +64,72 @@ export const CharacterInfo = () => {
           width: "100%",
         }}
       >
-        <InputNumber<number>
+        <InputNumber
           addonBefore="Taxes"
           prefix="$"
           name="taxes"
           style={{ width: "calc(50% - 12px)" }}
-          onChange={(e: string | number) => onChange(e, "taxes")}
+          onChange={(value: number | null) => onChange(value, "taxes")}
           value={characterInfoState.taxes}
         />
-        <InputNumber<number>
+        <InputNumber
           addonBefore="Mortgage"
           prefix="$"
           name="mortgage"
           style={{ width: "calc(50% - 12px)" }}
-          onChange={(e: string | number) => onChange(e, "mortgage")}
+          onChange={(value: number | null) => onChange(value, "mortgage")}
           value={characterInfoState.mortgage_payment}
         />
-        <InputNumber<number>
+        <InputNumber
           addonBefore="School Loan"
           prefix="$"
           name="school_loan"
           style={{ width: "calc(50% - 12px)" }}
-          onChange={(e: string | number) => onChange(e, "school_loan")}
+          onChange={(value: number | null) => onChange(value, "school_loan")}
           value={characterInfoState.school_loan_payment}
         />
-        <InputNumber<number>
+        <InputNumber
           addonBefore="Car Pay"
           prefix="$"
           name="car_payment"
           style={{ width: "calc(50% - 12px)" }}
-          onChange={(e: string | number) => onChange(e, "car_payment")}
+          onChange={(value: number | null) => onChange(value, "car_payment")}
           value={characterInfoState.car_payment}
         />
-        <InputNumber<number>
+        <InputNumber
           addonBefore="CC Pay"
           prefix="$"
           name="credit_card_payment"
           style={{ width: "calc(50% - 12px)" }}
-          onChange={(e: string | number) => onChange(e, "credit_card_payment")}
+          onChange={(value: number | null) =>
+            onChange(value, "credit_card_payment")
+          }
           value={characterInfoState.credit_card_payment}
         />
-        <InputNumber<number>
+        <InputNumber
           addonBefore="Retail Pay"
           prefix="$"
           name="retail_payment"
           style={{ width: "calc(50% - 12px)" }}
-          onChange={(e: string | number) => onChange(e, "retail_payment")}
+          onChange={(value: number | null) => onChange(value, "retail_payment")}
           value={characterInfoState.retail_payment}
         />
-        <InputNumber<number>
+        <InputNumber
           addonBefore="Others"
           prefix="$"
           name="other_expenses"
           style={{ width: "calc(50% - 12px)" }}
-          onChange={(e: string | number) => onChange(e, "other_expenses")}
+          onChange={(value: number | null) => onChange(value, "other_expenses")}
           value={characterInfoState.other_expenses}
         />
-        <InputNumber<number>
+        <InputNumber
           addonBefore="Per Child"
           prefix="$"
           name="per_child_expense"
           style={{ width: "calc(50% - 12px)" }}
-          onChange={(e: string | number) => onChange(e, "per_child_expense")}
+          onChange={(value: number | null) =>
+            onChange(value, "per_child_expense")
+          }
           value={characterInfoState.per_child_expense}
         />
       </div>
@@ -139,44 +143,44 @@ export const CharacterInfo = () => {
           justifyContent: "space-between",
         }}
       >
-        <InputNumber<number>
+        <InputNumber
           addonBefore="Mortgage"
           prefix="$"
           name="mortgage"
           style={{ width: "calc(50% - 12px)" }}
-          onChange={(e: string | number) => onChange(e, "mortgage")}
+          onChange={(value: number | null) => onChange(value, "mortgage")}
           value={characterInfoState.mortgage}
         />
-        <InputNumber<number>
+        <InputNumber
           addonBefore="School Loan"
           prefix="$"
           name="school_loan"
           style={{ width: "calc(50% - 12px)" }}
-          onChange={(e: string | number) => onChange(e, "school_loan")}
+          onChange={(value: number | null) => onChange(value, "school_loan")}
           value={characterInfoState.school_loans}
         />
-        <InputNumber<number>
+        <InputNumber
           addonBefore="Car Loan"
           prefix="$"
           name="car_loan"
           style={{ width: "calc(50% - 12px)" }}
-          onChange={(e: string | number) => onChange(e, "car_loan")}
+          onChange={(value: number | null) => onChange(value, "car_loan")}
           value={characterInfoState.car_loan}
         />
-        <InputNumber<number>
+        <InputNumber
           addonBefore="Credit Card"
           prefix="$"
           name="credit_cards"
           style={{ width: "calc(50% - 12px)" }}
-          onChange={(e: string | number) => onChange(e, "credit_cards")}
+          onChange={(value: number | null) => onChange(value, "credit_cards")}
           value={characterInfoState.credit_cards}
         />
-        <InputNumber<number>
+        <InputNumber
           addonBefore="Retail Debt"
           prefix="$"
           name="retail_debt"
           style={{ width: "calc(50% - 12px)" }}
-          onChange={(e: string | number) => onChange(e, "retail_debt")}
+          onChange={(value: number | null) => onChange(value, "retail_debt")}
           value={characterInfoState.retail_debt}
         />
       </div>

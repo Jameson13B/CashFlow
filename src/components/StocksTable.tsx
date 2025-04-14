@@ -2,6 +2,7 @@ import { Button, Empty, Table, Typography } from "antd"
 import { DeleteOutlined } from "@ant-design/icons"
 import { useRatRaceCalculatorStore } from "../state"
 import { EditableCell } from "./EditableCell"
+import { ColumnType } from "antd/es/table"
 
 export const StocksTable = () => {
   const { stocks, setStocks } = useRatRaceCalculatorStore()
@@ -135,7 +136,7 @@ export const StocksTable = () => {
             </Button>
           ),
         }))}
-        columns={stockColumns}
+        columns={stockColumns as ColumnType<RatRaceStocksState>[]}
         pagination={false}
         size="small"
         locale={{

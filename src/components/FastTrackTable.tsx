@@ -2,6 +2,7 @@ import { Button, Empty, Table, Typography } from "antd"
 import { DeleteOutlined } from "@ant-design/icons"
 import { useFastTrackStore } from "../state"
 import { EditableCell } from "./EditableCell"
+import { ColumnType } from "antd/es/table"
 
 export const FastTrackTable = () => {
   const { businesses, setBusinesses } = useFastTrackStore()
@@ -94,7 +95,7 @@ export const FastTrackTable = () => {
             </Button>
           ),
         }))}
-        columns={columns}
+        columns={columns as ColumnType<FastTrackBusinessState>[]}
         pagination={false}
         size="small"
         locale={{
